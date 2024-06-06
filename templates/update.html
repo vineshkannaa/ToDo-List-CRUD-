@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %} To-Do List {% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>To-Do List</h1>
+
+    <form action="/update/{{task.id}}" method="POST">
+        <input type="text" name="content" id="content" value="{{task.content}}"/>
+        <input type="datetime-local" name="scheduled_time" id="scheduled_time" value="{{ task.scheduled_time.strftime('%Y-%m-%dT%H:%M') if task.scheduled_time else '' }}"/>
+        <input type="submit" value="Update" />
+    </form>
+</div>
+
+{% endblock %}
