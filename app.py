@@ -20,8 +20,8 @@ class MyTask(db.Model):
     created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
     scheduled_time = db.Column(db.DateTime, nullable=True)    
 
-    def __repr__(self) -> str:
-        return f"Task {self.id}"
+def __repr__(self) -> str:
+    return f"Task {self.id}"
     
 #Home page
 @app.route("/", methods=["POST", "GET"])
